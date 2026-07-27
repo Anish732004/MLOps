@@ -4,7 +4,7 @@ from huggingface_hub import hf_hub_download
 import joblib
 
 # Download the model from the Model Hub
-model_path = hf_hub_download(repo_id="Lancer73/churn-model", filename="best_churn_model.joblib")
+model_path = hf_hub_download(repo_id="jpaggarwal/churn-model", filename="best_churn_model.joblib")
 
 # Load the model
 model = joblib.load(model_path)
@@ -17,7 +17,7 @@ st.write("Kindly enter the customer details to check whether they are likely to 
 # Collect user input
 CreditScore = st.number_input("Credit Score (customer's credit score)", min_value=300, max_value=900, value=650)
 Geography = st.selectbox("Geography (country where the customer resides)", ["France", "Germany", "Spain"])
-Age = st.number_input("Age (customer's age in years)", min_value=18, max_value=100, value=30)
+Age = st.number_input("Age (customer's age in Years)", min_value=18, max_value=100, value=30)
 Tenure = st.number_input("Tenure (number of years the customer has been with the bank)", value=12)
 Balance = st.number_input("Account Balance (customer’s account balance)", min_value=0.0, value=10000.0)
 NumOfProducts = st.number_input("Number of Products (number of products the customer has with the bank)", min_value=1, value=1)
